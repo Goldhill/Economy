@@ -1,0 +1,10 @@
+currency:
+    enabled: true
+    name: "Coin$"
+    name2: "Cent$"
+    chatFormat: false
+    
+bank:
+    enabled: true
+    commands: true
+    signs: true

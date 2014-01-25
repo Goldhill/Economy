@@ -5,6 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+
 public class CurrencyCommands implements CommandExecutor {
 
 	private Currency parent;
@@ -23,7 +24,7 @@ public class CurrencyCommands implements CommandExecutor {
 		}
 		
 		
-		if (label.equalsIgnoreCase("command")) {
+		if (label.equalsIgnoreCase("money")) {
 			if (player == null) {
 				//console
 			} else {
