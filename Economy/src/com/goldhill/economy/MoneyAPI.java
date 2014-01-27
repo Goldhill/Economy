@@ -18,11 +18,11 @@ public class MoneyAPI {
 		
 	}
 	
-	public long getDefaultBalance() {
+	public double getDefaultBalance() {
 		
 	}
 	
-	public long getDefaultBankBalance() {
+	public double getDefaultBankBalance() {
 		
 	}
 	
@@ -30,19 +30,19 @@ public class MoneyAPI {
 		
 	}
 	
-	public long getBalance(String player) {
+	public double getBalance(String player) {
 		
 	}
 	
-	public void setBalance() {
+	public void setBalance(String player, double amount) {
 		
 	}
 	
-	public void addBalance(String string, Long amount) {
+	public void addBalance(String string, double amount) {
 		
 	}
 	
-	public void removeBalance(String string, Long amount) {
+	public void removeBalance(String string, double amount) {
 		
 	}
 	
@@ -50,15 +50,15 @@ public class MoneyAPI {
 		
 	}
 	
-	public Long getBankBalance(String string) {
+	public double getBankBalance(String string) {
 		
 	}
 	
-	public void setBankBalance() {
+	public void setBankBalance(String player, double amount) {
 		
 	}
 	
-	public void addBankBalance() {
+	public void addBankBalance(String player, double amount) {
 		
 	}
 	
