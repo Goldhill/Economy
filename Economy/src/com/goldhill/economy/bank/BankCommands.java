@@ -43,6 +43,8 @@ public class BankCommands implements CommandExecutor {
 			}
 
 			if (split[0].equalsIgnoreCase("info")) {
+				
+				
 
 			}
 
@@ -56,8 +58,7 @@ public class BankCommands implements CommandExecutor {
 					return true;
 				}
 				double amount = Double.parseDouble(split[1]);
-				double bankMoney = bank.plugin.api.getBankBalance(player
-						.getName());
+				double bankMoney = bank.plugin.api.getBankBalance(player.getName());
 
 				if (bankMoney > amount) {
 					sender.sendMessage("nigga, ur trying to take more money than ur allowed to!");
@@ -119,7 +120,7 @@ public class BankCommands implements CommandExecutor {
 					player.sendMessage("You did not use a valid number.");
 					return true;
 				}
-				if (!bank.plugin.api.hasAccount(split[1])){
+				if (!bank.plugin.api.hasAccount(split[1])) {
 					player.sendMessage("That player does not have a bank account");
 					return true;
 				}
@@ -154,6 +155,11 @@ public class BankCommands implements CommandExecutor {
 			}
 
 			if (split[0].equalsIgnoreCase("config")) {// idk how to do this
+				String var1 = split[1];
+				
+				if (player.hasPermission("admin")){
+					
+				}
 
 			}
 

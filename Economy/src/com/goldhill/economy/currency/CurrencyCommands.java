@@ -29,7 +29,7 @@ public class CurrencyCommands implements CommandExecutor {
 				//console
 			} else {
 				if (!player.hasPermission("economy.currency.balance")) {
-					player.sendMessage("§cYou dont have the right permission to use this commandyadayaydayada");
+					player.sendMessage("§cYou dont have the right permission to use this command");
 					return true;
 				}
 				//show player balance
