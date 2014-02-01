@@ -34,8 +34,7 @@ public class BankCommands implements CommandExecutor {
 					sender.sendMessage("You can only use this command as a player!");
 					return true;
 				}
-				sender.sendMessage("You have "
-						+ bank.plugin.api.getBalance(player.getName()));
+				sender.sendMessage("You have " + bank.plugin.api.getBalance(player.getName()));
 			}
 
 			if (split[0].equalsIgnoreCase("help")) {
