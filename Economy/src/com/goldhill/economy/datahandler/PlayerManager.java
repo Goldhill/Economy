@@ -26,7 +26,12 @@ public class PlayerManager {
 	}
 	
 	public PlayerManager() {
-		
+		configFile = new File(plugin.getDataFolder(), "playerData.yml");
+		 
+        if(!configFile.exists()) {
+                plugin.saveResource("playerData", false);
+        }
+        this.data = YamlConfiguration.loadConfiguration(configFile);
 	}
 	
 	public String getConfig(String player, String property ) {
@@ -44,6 +49,16 @@ public class PlayerManager {
 			data.set(player+".bank", plugin.config.getConfig("defaultBankBalance"));
 			saveFile();
 		}
+	}
+	
+	public boolean initPlayer(String player, double bank, double cash) {
+		if (data.get(player) == null){
+			data.set(player+".balance", cash);
+			data.set(player+".bank", bank);
+			saveFile();
+			return true;
+		}
+		return false;
 	}
 	
 	public void saveFile() {
