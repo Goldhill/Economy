@@ -38,6 +38,8 @@ public class BankCommands implements CommandExecutor {
 			}
 
 			if (split[0].equalsIgnoreCase("help")) {
+				sender.sendMessage("Commands related to banks and shit");
+				sender.sendMessage("do /bank to see your bank balance");
 
 			}
 

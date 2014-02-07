@@ -53,6 +53,7 @@ public class PlayerManager {
 	
 	public boolean initPlayer(String player, double bank, double cash) {
 		if (data.get(player) == null){
+			
 			data.set(player+".balance", cash);
 			data.set(player+".bank", bank);
 			saveFile();
@@ -66,6 +67,7 @@ public class PlayerManager {
 			data.save(configFile);
 		} catch (IOException e) {
 			e.printStackTrace();
+			
 		}
 	}
 	
