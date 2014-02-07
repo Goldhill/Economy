@@ -16,20 +16,22 @@ public class PlayerManager {
 
 	public PlayerManager(Economy plugin) {
 		this.plugin = plugin;
-		configFile = new File(plugin.getDataFolder(), "playerData.yml");
-		 
-        if(!configFile.exists()) {
-                plugin.saveResource("playerData", false);
-        }
-        this.data = YamlConfiguration.loadConfiguration(configFile);
-		
+		createConfigs();
 	}
 	
 	public PlayerManager() {
-		configFile = new File(plugin.getDataFolder(), "playerData.yml");
-		 
+		createConfigs();
+	}
+	
+	private void createConfigs(){
+		configFile = new File("plugins/Economy/playerData.yml");
+		new File("plugins/config/Economy").mkdirs();
         if(!configFile.exists()) {
-                plugin.saveResource("playerData", false);
+        	try {
+				configFile.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
         }
         this.data = YamlConfiguration.loadConfiguration(configFile);
 	}
@@ -45,8 +47,8 @@ public class PlayerManager {
 	
 	public void initPlayer(String player) {
 		if (data.get(player) == null){
-			data.set(player+".balance", plugin.config.getConfig("defaultCashBalance"));
-			data.set(player+".bank", plugin.config.getConfig("defaultBankBalance"));
+			data.set(player+".cash_balance", plugin.config.getConfig("defaultCashBalance"));
+			data.set(player+".bank_balance", plugin.config.getConfig("defaultBankBalance"));
 			saveFile();
 		}
 	}
@@ -54,8 +56,8 @@ public class PlayerManager {
 	public boolean initPlayer(String player, double bank, double cash) {
 		if (data.get(player) == null){
 			
-			data.set(player+".balance", cash);
-			data.set(player+".bank", bank);
+			data.set(player+".cash_balance", cash);
+			data.set(player+".bank_balance", bank);
 			saveFile();
 			return true;
 		}

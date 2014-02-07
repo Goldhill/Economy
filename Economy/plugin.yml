@@ -1,12 +1,11 @@
 name: Economy
-version: 0.0.1
-description: All in one economy plugin
-authors:[spenk, hypnoatic]
 main: com.goldhill.economy.Economy
-
+author: Spenk
+version: 0.0.1
 commands:
-   basic:
-      description: This is a demo command.
-      usage: /<command> [player]
-      permission: <plugin name>.basic
-      permission-message: You don't have <permission>
+    money:
+        description: sends a message to the socket server
+        usage: /sendsocket <args> - to send a message to the socket server!
+    bank:
+        description: sends a message to the socket server
+        usage: /sendsocket <args> - to send a message to the socket server!

@@ -33,7 +33,7 @@ public class Configuration {
 	
 	
 	public String getConfig(String property) {
-		return "";
+		return "1000";
 	}
 
 }
