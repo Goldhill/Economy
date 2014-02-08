@@ -1,40 +1,41 @@
 package com.goldhill.economy.datahandler;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.goldhill.economy.Economy;
 
 public class Configuration {
-	
-	private Economy plugin;
-	private File configFile;
-	private FileConfiguration config;
-	
-	public Configuration(Economy plugin) {
-		this.plugin = plugin;
 
-	    if (configFile == null) {
-	        configFile = new File(plugin.getDataFolder(), "config.yml");
-	        }
-	        config = YamlConfiguration.loadConfiguration(configFile);
-	     
-	        // Look for defaults in the jar
-	        InputStream defConfigStream = plugin.getResource("defaultConfig.yml");
+	File file;
+	String path = "plugins/config/Economy/";
+	public FileConfiguration data;
+	
+	public Configuration() {
+		new File(path).mkdirs();
+		file = new File(path+"config.yml");
+		if (!file.exists()){
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	        InputStream defConfigStream = Economy.class.getResourceAsStream("defaultConfig.yml");
+	        
 	        if (defConfigStream != null) {
 	            YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
-	            config.setDefaults(defConfig);
+	            data.setDefaults(defConfig);
 	        }
+		}
+		this.data = YamlConfiguration.loadConfiguration(file);
 	}
 	
-	
-	
-	public String getConfig(String property) {
-		return "1000";
+	public Object getData(String key) {
+		return data.get(key);
 	}
-
 }
-//TODO

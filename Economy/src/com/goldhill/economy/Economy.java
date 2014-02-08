@@ -44,8 +44,8 @@ public class Economy extends JavaPlugin {
 	}
 	
 	public void loadConfigurations() {
-		config = new Configuration(this);
-		manager = new PlayerManager(this);
+		config = new Configuration();
+		manager = new PlayerManager();
 	}
 	
 	public void loadHooks() {

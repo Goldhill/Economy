@@ -26,7 +26,7 @@ public class GlobalPlayerListener implements Listener {
 	@EventHandler
 	public void onLogin(PlayerJoinEvent event) {
 		if (!plugin.api.hasAccount(event.getPlayer().getName())){
-			plugin.manager.initPlayer(event.getPlayer().getName());
+			plugin.manager.initPlayer(event.getPlayer().getName(), plugin.config.getData("bank.startBalance"), plugin.config.getData("money.startBalance"));
 		}
 	}
 	

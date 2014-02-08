@@ -20,8 +20,8 @@ public class MoneyAPI {
 		return manager.data.contains(player);
 	}
 	
-	public boolean createAccount(String player, double cashBalance, double bankBalance) {
-		return manager.initPlayer(player, bankBalance, cashBalance);
+	public void createAccount(String player, double cashBalance, double bankBalance) {
+		manager.initPlayer(player, bankBalance, cashBalance);
 	}
 	
 	public double getDefaultBalance() {
@@ -40,23 +40,23 @@ public class MoneyAPI {
 	}
 	
 	public double getBalance(String player) {
-		return Double.parseDouble(manager.getConfig(player, "cash_balance"));
+		return (Double)manager.getData(player+".cash_balance");
 	}
 	
 	public void setBalance(String player, double amount) {
-		manager.setConfig(player, "cash_balance", Double.toString(amount));
+		manager.setData(player+".cash_balance", amount);
 	}
 	
 	public void addBalance(String player, double amount) {
-		double balance = Double.parseDouble(manager.getConfig(player, "cash_balance"));
+		double balance = (Double)manager.getData(player+".cash_balance");
 		double transact = balance+amount;
-		manager.setConfig(player, "cash_balance", Double.toString(transact));
+		manager.setData(player+".cash_balance", transact);
 	}
 	
 	public void removeBalance(String player, double amount) {
-		double balance = Double.parseDouble(manager.getConfig(player, "cash_balance"));
+		double balance = (Double)manager.getData(player+".cash_balance");
 		double transact = balance-amount;
-		manager.setConfig(player, "cash_balance", Double.toString(transact));
+		manager.setData(player+".cash_balance", transact);
 	}
 	
 	public double getinterestRate() {
@@ -65,22 +65,22 @@ public class MoneyAPI {
 	}
 	
 	public double getBankBalance(String player) {
-		return Double.parseDouble(manager.getConfig(player, "bank_balance"));
+		return (Double)manager.getData(player+".bank_balance");
 	}
 	
 	public void setBankBalance(String player, double amount) {
-		manager.setConfig(player, "bank_balance", Double.toString(amount));
+		manager.setData(player+".bank_balance", amount);
 	}
 	
 	public void addBankBalance(String player, double amount) {
-		double balance = Double.parseDouble(manager.getConfig(player, "bank_balance"));
+		double balance = (Double)manager.getData(player+".bank_balance");
 		double transact = balance+amount;
-		manager.setConfig(player, "bank_balance", Double.toString(transact));
+		manager.setData(player+".bank_balance", transact);
 	}
 	
 	public void removeBankBalance(String player, double amount) {
-		double balance = Double.parseDouble(manager.getConfig(player, "bank_balance"));
+		double balance = (Double)manager.getData(player+".bank_balance");
 		double transact = balance-amount;
-		manager.setConfig(player, "bank_balance", Double.toString(transact));
+		manager.setData(player+".bank_balance", transact);
 	}
 }

@@ -3,8 +3,9 @@ currency:
     name: "Coin$"
     name2: "Cent$"
     chatFormat: false
-    
+    StartBalance: 500
 bank:
     enabled: true
     commands: true
     signs: true
+    startBalance: 1000
