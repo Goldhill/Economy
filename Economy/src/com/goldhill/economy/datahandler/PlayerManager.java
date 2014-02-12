@@ -19,5 +19,7 @@ public class PlayerManager extends FileManager {
 		data.set(player+".cash_balance", CashBalance);
 		data.set(player+".bank_balance", BankBalance);
 	}
+	
+	
 
 }
