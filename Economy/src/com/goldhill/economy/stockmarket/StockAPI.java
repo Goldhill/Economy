@@ -1,21 +1,11 @@
 package com.goldhill.economy.stockmarket;
 
-import java.util.HashMap;
-
-import com.goldhill.economy.datahandler.FileManager;
-import com.goldhill.economy.datahandler.PlayerManager;
+import com.goldhill.economy.GlobalAPI;
 import com.goldhill.economy.datahandler.StockManager;
 
-public class StockAPI extends FileManager {
+public class StockAPI extends GlobalAPI{
 	
-	public StockAPI(String fileName) {
-		super(fileName);
-		// TODO Auto-generated constructor stub
-	}
-
-	private PlayerManager manager = new PlayerManager();
-	public StockManager smanager = new StockManager();
-	public HashMap<String, String> stocks = new HashMap<String, String>();
+	StockManager stockManager = new StockManager();
 	
 	public String[] getStocks(String player) {
 		return (String[]) manager.getData(player + ".stocks");
@@ -23,20 +13,20 @@ public class StockAPI extends FileManager {
 	}
 	
 	public String[] getStockers(String stock) {
-		return (String[]) smanager.getData(stock + ".stockers");
+		return (String[]) stockManager.getData(stock + ".stockers");
 	}
 	
 	public void setInterest(String stock, Double interest) {
-		smanager.setData(stock + ".interest", interest);
+		stockManager.setData(stock + ".interest", interest);
 	}
 	
 	public double getStockPrice(String stock) {
-		return (Double) smanager.getData(stock + ".price");
+		return (Double) stockManager.getData(stock + ".price");
 		
 	}
 	
 	public boolean stockExist(String stock) {
-		return smanager.data.contains(stock);
+		return stockManager.data.contains(stock);
 		
 	}
 	

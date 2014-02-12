@@ -1,10 +1,7 @@
 package com.goldhill.economy;
 
-import com.goldhill.economy.datahandler.PlayerManager;
 
-public class MoneyAPI {
-	
-	private PlayerManager manager = new PlayerManager();
+public class MoneyAPI extends GlobalAPI{
 	
 	public String getMoneyName() {
 		return "Cash";
