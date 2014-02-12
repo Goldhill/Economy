@@ -6,7 +6,7 @@ public class StockManager extends FileManager {
 		super(filename);
 	}
 	
-	public void initialize(String stockowner, ) {
+	public void initialize(String name, String company) {//Make it that only companies can make stocks
 		
 	}
 
