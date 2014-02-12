@@ -2,11 +2,11 @@ package com.goldhill.economy.datahandler;
 
 public class StockManager extends FileManager {
 	
-	public StockManager() {
-		super("StockManager");
+	public StockManager(String file name) {
+		super(filename);
 	}
 	
-	public void initialize() {
+	public void initialize(String stockowner, ) {
 		
 	}
 
