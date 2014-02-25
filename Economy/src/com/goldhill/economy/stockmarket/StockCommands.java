@@ -6,10 +6,12 @@ import org.bukkit.entity.Player;
 
 import com.goldhill.economy.Economy;
 import com.goldhill.economy.Utils;
+import com.goldhill.stockmarket.StockAPI;
 
 public class StockCommands {
 	
 	private StockMarket stock;
+	private StockAPI stockAPI = new StockAPI();
 	
 	public StockCommands(StockMarket stock) {
 		this.stock = stock;
